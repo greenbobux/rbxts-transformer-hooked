@@ -1,6 +1,6 @@
 {
   "name": "rbxts-transformer-hooked",
-  "version": "1.0.0",
+  "version": "1.0.0-rc",
   "description": "A roblox-ts transformer for roact-hooked",
   "main": "out/index.js",
   "scripts": {

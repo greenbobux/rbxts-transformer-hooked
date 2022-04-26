@@ -18,9 +18,7 @@ export function transformImportDeclaration(
 		if (namedImports)
 			if (ts.isNamedImports(namedImports)) {
 				const file = node.getSourceFile();
-				namedImports.elements.filter((imported) => {
-					return imported.name.text === "hooked";
-				});
+
 				if (
 					namedImports.elements.filter((imported) => {
 						return imported.name.text === "hooked";
