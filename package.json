@@ -1,0 +1,26 @@
+{
+  "name": "rbxts-transformer-hooked",
+  "version": "1.0.0",
+  "description": "A roblox-ts transformer for roact-hooked",
+  "main": "out/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "greenbobux",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^4.6.3"
+  },
+  "devDependencies": {
+    "@types/ts-expose-internals": "npm:ts-expose-internals"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/greenbobux/rbxts-transformer-hooked.git"
+  },
+  "homepage": "https://github.com/greenbobux/rbxts-transformer-hooked.git",
+  "readme": "https://github.com/greenbobux/rbxts-transformer-hooked/blob/main/README.md",
+  "files": [
+    "out"
+  ]
+}
