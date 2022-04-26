@@ -1,5 +1,12 @@
 import ts from "typescript";
 import { TransformState } from "./transformer";
+function evaluateParenthesis(node: ts.Node): ts.Node {
+	if (ts.isParenthesizedExpression(node)) {
+		return evaluateParenthesis(node.expression);
+	} else {
+		return node;
+	}
+}
 export default function transformArrowFunction(
 	state: TransformState,
 	node: ts.ArrowFunction
@@ -14,7 +21,11 @@ export default function transformArrowFunction(
 				if (ts.isReturnStatement(statement)) {
 					const returned = statement.expression;
 					if (returned)
-						if (ts.isJsxOpeningLikeElement(returned)) {
+						if (
+							ts.isJsxOpeningLikeElement(
+								evaluateParenthesis(returned)
+							)
+						) {
 							arrowFunction = factory.createCallExpression(
 								factory.createIdentifier("hooked"),
 								[],
