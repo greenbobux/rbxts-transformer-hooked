@@ -1,5 +1,17 @@
 
-Automatically wraps functional components with `hooked()` from `@rbxts/roact-hooked`.
-It imports `hooked` for you, if not already imported.
+# Installation
+install with `npm install --save-dev rbxts-transformer-hooked`
 
-its pretty janky 
+add this to compiler options in your `tsconfig.json`
+<br/>
+```json
+    "plugins": [
+        {
+            "transform": "rbxts-transformer-hooked"
+        }
+    ]
+ ```
+
+ 
+Automatically wraps functional components with `hooked()` from `@rbxts/roact-hooked`. <br/>
+It imports `hooked` for you, if not already.
