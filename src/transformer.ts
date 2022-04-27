@@ -1,4 +1,4 @@
-import ts, { factory, fileExtensionIs } from "typescript";
+import ts, { factory, fileExtensionIs, TsConfigOnlyOption } from "typescript";
 import { transformNode } from "./transformNode";
 
 /**
@@ -17,6 +17,10 @@ export class TransformState {
 	public factory: ts.NodeFactory;
 	public typeChecker: ts.TypeChecker;
 	public imported = new Map<ts.SourceFile, boolean>();
+	public pending = new Map<
+		ts.SourceFile,
+		((state: TransformState, node: ts.SourceFile) => ts.SourceFile)[]
+	>();
 	constructor(
 		public program: ts.Program,
 		public state: ts.TransformationContext,
